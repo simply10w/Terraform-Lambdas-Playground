@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1580497395031",
+      "Action": [
+        "sqs:DeleteMessage",
+        "sqs:DeleteMessageBatch",
+        "sqs:SendMessage",
+        "sqs:SendMessageBatch",
+        "sqs:ReceiveMessage"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "Stmt1580497444910",
+      "Action": ["s3:GetObject"],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "Stmt1580497491890",
+      "Action": [
+        "kinesis:DescribeStream",
+        "kinesis:GetRecords",
+        "kinesis:GetShardIterator"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "Stmt1580497560348",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
